@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 import '../styles/Navbar.css';
 
-export default class Navbar extends Component {
-  constructor(props) {
-    super(props);
-  }
+export default class Navbar extends Component { 
   render() {
     return (
-      <nav className="navbar navbar-expand navbar-light bg-light sticky-top">
-        <ul className="navbar-nav text-center">
-          <li className="nav-item brand">
-            <a href="/">Clicky Game</a>
-          </li>
-          <li className="nav-item">Click an image to begin</li>
-          <li className="nav-item">Score: {this.props.score} | Top Score: {this.props.topScore}</li>
-        </ul>
-      </nav>
+        <nav className="navbar navbar-expand navbar-light bg-light sticky-top">
+            <div className="nav-item brand col-4">
+              <a href="/">Clicky Game</a>
+            </div>
+            <div className="nav-item col-4">Click an image to begin!</div>
+            <div className="nav-item col-4">Current Score: { this.props.score } | High Score: { this.props.highScore } </div>
+        </nav>
     )
   }
 }

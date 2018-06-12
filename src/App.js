@@ -1,21 +1,68 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Main from './components/Main';
 
-class App extends Component {
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      score : 0,
+      highScore : 0,
+      clicked: []
+    };
+  }
+
+  setScore = id => {
+    // check the clicked array to see if the newest clicked id is already there
+    if ( this.state.clicked.includes(id) ) {
+      this.setState({
+        score : 0,
+        clicked : []
+      });
+      // notifies the end and restart of game
+      alert("Sorry, you lost. Try Again!");
+    }
+    else {
+      // adds the new id to the clicked array
+      this.setState({
+        clicked : [...this.state.clicked, id]
+      });
+      // sets the score to the new score
+      const nScore = this.state.score + 1;
+      this.setState({
+        score : nScore
+      });
+
+      // sets a new High Score if one is achieved
+      if ( nScore >= this.state.highScore ) { 
+        this.setState({
+          highScore : nScore 
+        });
+      }
+      // notifies the end of the game if all twelve are clicked with no repeats
+      if ( nScore === 12 ) { 
+        this.setState({
+          score : 0,
+          clicked : []
+        });
+        alert("You won! Great job!");
+      }
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Header
+        score = { this.state.score } 
+        highScore = { this.state.highScore } 
+        />
+        <Main 
+        setScore = { this.setScore } 
+        />
       </div>
     );
   }
 }
-
-export default App;
