@@ -1,3 +1,46 @@
 .oranges {
     max-width: 200px;
+    margin: 10px;
+    border: 3px solid white;
+}
+
+.oranges:hover {
+    cursor: pointer;
+}
+
+#Orange1 {
+    background-color:#1515BF;
+} 
+#Orange2 {
+    background: #0E0E7F;
+}
+#Orange3 {
+    background: #1C1CFF;
+}
+#Orange4 {
+    background: #00627F;
+}
+#Orange5 {
+    background: #07FFBF;
+}
+#Orange6 {
+    background: #00C4FF;
+}
+#Orange7 {
+    background: #080852;
+}
+#Orange8 {
+    background: #8be2ff;
+}
+#Orange9 {
+    background: green;
+}
+#Orange10 {
+    background: greenyellow;
+}
+#Orange11 {
+    background: #1dfa42;
+}
+#Orange12 {
+    background: lightgreen;
 }

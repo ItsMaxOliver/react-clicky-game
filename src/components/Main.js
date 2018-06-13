@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Orange from './Orange';
-import '../styles/Main.css';
 
 const src = "/orange.png";
 
