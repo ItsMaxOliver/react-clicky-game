@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Orange from './Orange';
 
-const src = "/orange.png";
+const src = "./orange.png";
 
 let orangesArr = [
   {
