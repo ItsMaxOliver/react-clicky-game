@@ -71,9 +71,7 @@ export default class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lastClicked: false,
-      score: 0,
-      highScore: 0
+      lastClicked: false
     };
   }
 
@@ -99,7 +97,7 @@ export default class Main extends Component {
           <Orange 
             src = { image.src }
             alt = { image.name }
-            id = { image.id }
+            id = { image.name }
             key = { image.id.toString() }
             clickHandler = { this.clickHandler }
           />)}
