@@ -67,13 +67,7 @@ let orangesArr = [
 ];
 
 export default class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      lastClicked: false
-    };
-  }
-
+ 
   shuffleOranges = (arr) => {
     for (let i = (arr.length - 1); i > 0; i--) {
       const k = Math.floor(Math.random() * (i + 1));
@@ -83,9 +77,6 @@ export default class Main extends Component {
 
   clickHandler = (id) => {
     this.props.setScore(id);
-    this.setState({
-      lastClicked: id
-    });
     this.shuffleOranges(orangesArr); 
   }
 
